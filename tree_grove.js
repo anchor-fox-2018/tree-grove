@@ -2,7 +2,42 @@ const MangoTree = require('./mango_tree.js');
 const AppleTree = require('./apple_tree.js');
 const PearTree = require('./pear_tree.js');
 
-class TreeGrove {}
+
+class TreeGrove {
+    inputTree(name,age,height,mature,status){
+        this._name = name;
+        this._age = age;
+        this._height = height;
+        this._mature = mature;
+        this._status = status;
+        return this
+    }
+    showAges(){
+        console.log('umur dari "',this._name,'" adalah "',this._age,'" tahun')
+    }
+    showTrees(){
+        console.log('Nama Pohon: "',this._name,'"')
+    }
+    showMatureTrees(){
+        if(this._age >= this._mature){
+            console.log('"',this._name,'" anda Sudah berbuah')
+        }else{
+            console.log('"',this._name,'" anda Belum berbuah')
+        }
+        
+    }
+    showDeadTrees(){
+        if(this._age > this._mature){
+            console.log(this._name,'Sudah Wafat...')
+        }else{
+            console.log("Belum Ada Tanaman Yang Mati,Silahkan Tunggu...")
+        } 
+    }
+    nextYear(year){
+        this._age = this._age + year
+        console.log(this)
+    }
+}
 
 var grove = new TreeGrove()
 // input your trees data !
@@ -17,7 +52,7 @@ grove.inputTree("AppleTree", 4, 1.2, 5, true)
 grove.inputTree("PearTree", 7, 2, 15, true)
 
 // next year
-grove.nextYear()
+grove.nextYear(7)
 
 // show trees ages
 grove.showAges()
