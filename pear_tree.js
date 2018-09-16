@@ -2,18 +2,18 @@ const myFruitTree = require('./fruitTree.js');
 const fruitTree = myFruitTree.fruitTree
 const fruit = myFruitTree.fruit
 
-class AppleTree extends fruitTree{
+class PearTree extends fruitTree{
     constructor(){
         super()
-        this._maxAge = 15
+        this._maxAge = 25
     }
 }
 
-class Apple extends fruit{
+class Pear extends fruit{
 
 }
 
 module.exports = {
-   appleTree : AppleTree,
-   apple :Apple
+   pearTree:PearTree,
+   pear:Pear
 }
